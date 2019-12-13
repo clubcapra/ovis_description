@@ -4,11 +4,11 @@
     <xacro:unless value="${not connected_to}">
       <joint name="${arm_id}_joint_${connected_to}" type="fixed">
         <parent link="${connected_to}"/>
-        <child link="${arm_id}_link0"/>
+        <child link="${arm_id}_base_link"/>
         <origin rpy="${rpy}" xyz="${xyz}"/>
       </joint>
     </xacro:unless>
-    <link name="${arm_id}_link0">
+    <link name="${arm_id}_base_link">
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/ovis_base.stl"/>
@@ -44,7 +44,7 @@
     </link>
     <joint name="${arm_id}_joint1" type="revolute">
       <origin xyz="0 0 0.051" rpy="0 0 0"/>
-      <parent link="${arm_id}_link0"/>
+      <parent link="${arm_id}_base_link"/>
       <child link="${arm_id}_link1"/>
       <dynamics damping="0.1"/>
       <axis xyz="0 0 1"/>

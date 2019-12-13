@@ -8,7 +8,7 @@
     <param name="robot_description" command="xacro --inorder '$(find ovis_description)/urdf/ovis_w_gripper.urdf.xacro'"/>
 
     <!-- publish all the frames to TF -->
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
     </node>
 
     <group  if="$(arg test)">

@@ -150,12 +150,12 @@
       <axis xyz="0 0 1"/>
       <limit effort="10000.0" lower="${-2*pi}" upper="${2*pi}" velocity="0.57"/>
     </joint>
-    <link name="${arm_id}_link7">
+    <link name="${arm_id}_tool0">
     </link>
-    <joint name="moveit_handle" type="fixed">
-    <parent link="${arm_id}_link6"/>
-    <child link="${arm_id}_link7"/>
-    <origin xyz="0 0 -0.26995" rpy="0 ${pi} ${pi/2}"/>
-  </joint>
+    <joint name="${arm_id}_link6-tool0" type="fixed">
+      <parent link="${arm_id}_link6"/>
+      <child link="${arm_id}_tool0"/>
+      <origin xyz="0 0 -0.09215" rpy="0 ${pi} ${pi/2}"/>
+    </joint>
   </xacro:macro>
 </robot>

@@ -6,6 +6,8 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1/Frames1
+        - /TF1/Frames1/virtual_pivot1
       Splitter Ratio: 0.5
     Tree Height: 721
   - Class: rviz/Selection
@@ -117,7 +119,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        ovis_link7:
+        ovis_tool0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -146,12 +148,88 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        virtual_pivot:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        left_inner_finger:
+          Value: false
+        left_inner_knuckle:
+          Value: false
+        left_outer_finger:
+          Value: false
+        left_outer_knuckle:
+          Value: false
+        ovis_base_link:
+          Value: false
+        ovis_link1:
+          Value: false
+        ovis_link2:
+          Value: false
+        ovis_link3:
+          Value: false
+        ovis_link4:
+          Value: false
+        ovis_link5:
+          Value: false
+        ovis_link6:
+          Value: false
+        ovis_tool0:
+          Value: false
+        right_inner_finger:
+          Value: false
+        right_inner_knuckle:
+          Value: false
+        right_outer_finger:
+          Value: false
+        right_outer_knuckle:
+          Value: false
+        robotiq_arg2f_base_link:
+          Value: false
+        virtual_pivot:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: true
+      Tree:
+        ovis_base_link:
+          ovis_link1:
+            ovis_link2:
+              ovis_link3:
+                ovis_link4:
+                  ovis_link5:
+                    ovis_link6:
+                      ovis_tool0:
+                        robotiq_arg2f_base_link:
+                          left_inner_knuckle:
+                            {}
+                          left_outer_knuckle:
+                            left_outer_finger:
+                              left_inner_finger:
+                                {}
+                          right_inner_knuckle:
+                            {}
+                          right_outer_knuckle:
+                            right_outer_finger:
+                              right_inner_finger:
+                                {}
+                          virtual_pivot:
+                            {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -180,25 +258,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.818056583404541
+      Distance: 1.8351579904556274
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.17994844913482666
-        Y: -0.38885992765426636
-        Z: 0.1451817899942398
+        X: -0.1854877471923828
+        Y: -0.47460272908210754
+        Z: 0.3150450885295868
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.42039793729782104
+      Pitch: 0.3803977966308594
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.290395975112915
+      Yaw: 2.165398120880127
     Saved: ~
 Window Geometry:
   Displays:

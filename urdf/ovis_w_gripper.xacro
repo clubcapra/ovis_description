@@ -9,9 +9,17 @@
 
   <!-- attach robotiq gripper to ovis flange -->
   <joint name="gripper_base" type="fixed">
-    <parent link="ovis_link6"/>
+    <parent link="ovis_tool0"/>
     <child link="robotiq_arg2f_base_link"/>
-    <origin xyz="0 0 -0.09215" rpy="0 ${pi} ${pi/2}"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- define a virtual pivot point for moveit -->
+  <link name="virtual_pivot"/>
+  <joint name="moveit_handle" type="fixed">
+    <parent link="robotiq_arg2f_base_link"/>
+    <child link="virtual_pivot"/>
+    <origin xyz="0 0 0.1778" rpy="0 0 0"/>
   </joint>
 
 </robot>

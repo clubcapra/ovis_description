@@ -16,8 +16,9 @@
       <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     </group>
 
-    <!-- launch rviz to see the model --> -->
-    <node name="rviz" pkg="rviz" type="rviz">
-    </node>
+    <!-- launch rviz to see the model -->
+    <group if="$(arg gui)">
+      <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ovis_description)/rviz/config.rviz"/>
+    </group>
 
 </launch>

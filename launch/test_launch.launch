@@ -5,7 +5,7 @@
     <arg name="gui" default="true" />
 
     <!-- load the urdf -->
-    <param name="robot_description" command="xacro --inorder '$(find ovis_description)/urdf/ovis_w_gripper.urdf.xacro'"/>
+    <param name="robot_description" command="xacro '$(find ovis_description)/urdf/ovis_w_gripper.xacro'"/>
 
     <!-- publish all the frames to TF -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">

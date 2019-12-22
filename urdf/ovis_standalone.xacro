@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- OVIS 6DOF spherical wrist robotic arm -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ovis">
+  <!-- Include ovis robotic arm -->
+  <xacro:include filename="$(find ovis_description)/urdf/ovis.xacro"/>
+
+  <!-- Add a robotiq 2f 140 gripper -->
+  <xacro:include filename="$(find robotiq_2f_140_gripper_visualization)/urdf/robotiq_arg2f_140_model_macro.xacro" />
+  <xacro:robotiq_arg2f_140 prefix=""/>
+
+  <!-- attach robotiq gripper to ovis flange -->
+  <joint name="gripper_base" type="fixed">
+    <parent link="ovis_link_tool0"/>
+    <child link="robotiq_arg2f_base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="root"/>
+
+  <xacro:property name="robot_root" value="root" />
+
+  <xacro:ovis base_parent="${robot_root}"/>
+
+</robot>

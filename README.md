@@ -7,8 +7,5 @@ This package requires robotiq's robotiq_2f_140_gripper_visualization available a
 
 ## To test with RViz
 ```
-roslaunch ovis_description test_launch.launch
+roslaunch ovis_description display_robot.launch
 ```
-* Set Fixed Frame to root
-* Add RobotModel view
-* Play with joint_state_publisher sliders

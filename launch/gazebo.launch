@@ -1,0 +1,12 @@
+<launch>
+  <!-- Convert an xacro and put on parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro $(find ovis_description)/urdf/ovis_standalone.xacro" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"></include>
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="
+    -param robot_description -urdf -model ovis
+    -J ovis_joint_2 -1.57
+    -J ovis_joint_3 1.57"
+  />
+</launch>

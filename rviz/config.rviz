@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /RobotModel1
         - /RobotModel1/Links1
+        - /RobotModel1/Links1/ovis_camera1
       Splitter Ratio: 0.5
     Tree Height: 721
   - Class: rviz/Selection
@@ -83,6 +84,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        ovis_camera:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
         ovis_end_effector:
           Alpha: 1
           Show Axes: true

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<root xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz" 
+    xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model" 
+    xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" 
+    xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body" 
+    xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom" 
+    xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint" 
+    xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" 
+    xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" 
+    xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering" 
+    xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable" 
+    xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" 
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="ovis_inertial" params="link_name">
+        <!-- Base Link -->
+        <xacro:if value="${link_name == 'ovis_link_base'}">
+            <inertial>
+                <mass value="16.111" />
+                <origin xyz="-0.00002529 0.00000008 -0.06049447" rpy="0 0 0"/>
+                <inertia ixx="0.385006414" ixy="0.0000696244868" ixz="-0.000181517937" iyy="0.624959190" iyz="0.000000162897534" izz="0.798949961"/>
+            </inertial>
+        </xacro:if>
+
+        <!-- Link 1 -->
+        <xacro:if value="${link_name == 'ovis_link_1'}">
+            <inertial>
+                <mass value="0.7477"/>
+                <origin xyz="0 -0.002 -0.0605" rpy="0 0 0"/>
+                <inertia ixx="0.385006414" ixy="0.0000696244868" ixz="-0.000181517937" iyy="0.624959190" iyz="0.000000162897534" izz="0.798949961"/>
+            </inertial>
+        </xacro:if>
+
+        <!-- Link 2 -->
+        <xacro:if value="${link_name == 'ovis_link_2'}">
+            <inertial>
+                <mass value="0.7477"/>
+                <origin xyz="0 -0.002 -0.0605" rpy="0 0 0"/>
+                <inertia ixx="0.385006414" ixy="0.0000696244868" ixz="-0.000181517937" iyy="0.624959190" iyz="0.000000162897534" izz="0.798949961"/>
+            </inertial>
+        </xacro:if>
+
+        <!-- Link 3 -->
+        <xacro:if value="${link_name == 'ovis_link_3'}">
+            <inertial>
+                <mass value="0.7477"/>
+                <origin xyz="0 -0.002 -0.0605" rpy="0 0 0"/>
+                <inertia ixx="0.385006414" ixy="0.0000696244868" ixz="-0.000181517937" iyy="0.624959190" iyz="0.000000162897534" izz="0.798949961"/>
+            </inertial>
+        </xacro:if>
+
+        <!-- Link 4 -->
+        <xacro:if value="${link_name == 'ovis_link_4'}">
+            <inertial>
+                <mass value="0.7477"/>
+                <origin xyz="0 -0.002 -0.0605" rpy="0 0 0"/>
+                <inertia ixx="0.385006414" ixy="0.0000696244868" ixz="-0.000181517937" iyy="0.624959190" iyz="0.000000162897534" izz="0.798949961"/>
+            </inertial>
+        </xacro:if>
+
+        <!-- Link 5 -->
+        <xacro:if value="${link_name == 'ovis_link_5'}">
+            <inertial>
+                <mass value="0.7477"/>
+                <origin xyz="0 -0.002 -0.0605" rpy="0 0 0"/>
+                <inertia ixx="0.385006414" ixy="0.0000696244868" ixz="-0.000181517937" iyy="0.624959190" iyz="0.000000162897534" izz="0.798949961"/>
+            </inertial>
+        </xacro:if>
+
+        <!-- Link 6 -->
+        <xacro:if value="${link_name == 'ovis_link_6'}">
+            <inertial>
+                <mass value="0.7477"/>
+                <origin xyz="0 -0.002 -0.0605" rpy="0 0 0"/>
+                <inertia ixx="0.385006414" ixy="0.0000696244868" ixz="-0.000181517937" iyy="0.624959190" iyz="0.000000162897534" izz="0.798949961"/>
+            </inertial>
+        </xacro:if>
+
+    </xacro:macro>
+</root>
+

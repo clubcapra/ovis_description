@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Adapted from the kinova-ros pkg for use by Club Capra -->
+<!-- Adapted from the kinova-ros pkg for use by Club Capra on the Ovis robotic arm -->
 
 <root xmlns:xi="http://www.w3.org/2001/XInclude" 
   xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz" 
@@ -14,6 +14,8 @@
   xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable" 
   xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" 
   xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find ovis_description)/urdf/ovis_inertial.xacro" />
 
   <xacro:macro name="kinova_armlink" params="link_name link_mesh link_origin_xyz:='0 0 0' link_origin_rpy:='0 0 0' has_collision_mesh:=false">
     <link name="${link_name}">
@@ -34,6 +36,7 @@
         </geometry>
         <origin xyz="${link_origin_xyz}" rpy="${link_origin_rpy}"/>
       </collision>
+      <xacro:ovis_inertial link_name="${link_name}"/>
     </link>
   </xacro:macro>
 
@@ -58,7 +61,7 @@
         </actuator>
       </transmission>
       <!--For torque sensing in simulation-->
-      <!-- <gazebo reference="${joint_name}">
+      <gazebo reference="${joint_name}">
         <provideFeedback>true</provideFeedback>
       </gazebo>
       <gazebo>
@@ -67,10 +70,9 @@
           <topicName>${joint_name}_ft_sensor_topic</topicName>
           <jointName>${joint_name}</jointName>
         </plugin>
-      </gazebo> -->
+      </gazebo>
     </xacro:unless>
   </xacro:macro>
-
 
   <xacro:macro name="kinova_virtual_link" params="link_name">
     <link name="${link_name}"/>

@@ -102,17 +102,18 @@
     <xacro:property name="joint_camera_origin_xyz" value="0 0.091842 -0.0732" />
     <xacro:property name="joint_camera_origin_rpy" value="0 ${pi/2} ${pi/2}" />
 
+    <!-- camera link -->
     <link name="ovis_camera">
         <inertial>
             <mass value=".1"/>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <inertia ixx="0" ixy="0.0" ixz="0.0" iyy="0" iyz="0.0" izz="0" />
         </inertial>        
-        <visual>
+        <!-- <visual>
             <geometry>
                 <box size=".01 .01 .01"/>
             </geometry>
-        </visual>
+        </visual> -->
     </link>
 
     <xacro:macro name="ovis" params="base_parent prefix:=ovis">
@@ -145,9 +146,7 @@
         <xacro:kinova_virtual_joint joint_name="${prefix}_joint_end_effector" type="${joint_end_effector_type}" parent="${prefix}_link_tool0" child="${prefix}_end_effector" joint_axis_xyz="${joint_end_effector_axis_xyz}" joint_origin_xyz="${joint_end_effector_origin_xyz}" joint_origin_rpy="${joint_end_effector_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0"/>
 
         <!-- Camera -->
-        <!-- <xacro:kinova_virtual_link link_name="${prefix}_camera"/> -->
         <xacro:kinova_virtual_joint joint_name="${prefix}_camera" type="${joint_camera_type}" parent="${prefix}_link_6" child="${prefix}_camera" joint_axis_xyz="${joint_camera_axis_xyz}" joint_origin_xyz="${joint_camera_origin_xyz}" joint_origin_rpy="${joint_camera_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0"/>
-        <!-- camera link -->
 
     </xacro:macro>
 

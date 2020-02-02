@@ -4,6 +4,7 @@
 <root xmlns:xi="http://www.w3.org/2001/XInclude" 
     xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:include filename="$(find ovis_description)/urdf/ovis.gazebo" />
     <xacro:include filename="$(find ovis_description)/urdf/kinova_common.xacro" />
 
     <xacro:property name="link_base_mesh" value="ovis_base" />
@@ -95,6 +96,26 @@
     <xacro:property name="joint_end_effector_origin_xyz" value="0 0 0.1778" />
     <xacro:property name="joint_end_effector_origin_rpy" value="0 0 0" />
 
+    <xacro:property name="joint_camera" value="camera" />
+    <xacro:property name="joint_camera_type" value="fixed" />
+    <xacro:property name="joint_camera_axis_xyz" value="0 0 1" />
+    <xacro:property name="joint_camera_origin_xyz" value="0 0.091842 -0.0732" />
+    <xacro:property name="joint_camera_origin_rpy" value="0 ${pi/2} ${pi/2}" />
+
+    <!-- camera link -->
+    <link name="ovis_camera">
+        <inertial>
+            <mass value=".1"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0" ixy="0.0" ixz="0.0" iyy="0" iyz="0.0" izz="0" />
+        </inertial>        
+        <!-- <visual>
+            <geometry>
+                <box size=".01 .01 .01"/>
+            </geometry>
+        </visual> -->
+    </link>
+
     <xacro:macro name="ovis" params="base_parent prefix:=ovis">
 
         <xacro:kinova_armlink link_name="${prefix}_link_base" link_mesh="${link_base_mesh}" link_origin_rpy="${link_base_origin_rpy}"/>
@@ -124,5 +145,9 @@
         <xacro:kinova_virtual_link link_name="${prefix}_end_effector"/>
         <xacro:kinova_virtual_joint joint_name="${prefix}_joint_end_effector" type="${joint_end_effector_type}" parent="${prefix}_link_tool0" child="${prefix}_end_effector" joint_axis_xyz="${joint_end_effector_axis_xyz}" joint_origin_xyz="${joint_end_effector_origin_xyz}" joint_origin_rpy="${joint_end_effector_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0"/>
 
+        <!-- Camera -->
+        <xacro:kinova_virtual_joint joint_name="${prefix}_camera" type="${joint_camera_type}" parent="${prefix}_link_6" child="${prefix}_camera" joint_axis_xyz="${joint_camera_axis_xyz}" joint_origin_xyz="${joint_camera_origin_xyz}" joint_origin_rpy="${joint_camera_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0"/>
+
     </xacro:macro>
+
 </root>

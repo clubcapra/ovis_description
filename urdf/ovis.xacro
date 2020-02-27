@@ -28,6 +28,7 @@
     <xacro:property name="joint_1_type" value="continuous" />
     <xacro:property name="joint_1_axis_xyz" value="0 0 1" />
     <xacro:property name="joint_1_origin_xyz" value="0 0 0.051" />
+    <!-- New Z offset to be 0.06885 -->
     <xacro:property name="joint_1_origin_rpy" value="0 0 0" />
     <xacro:property name="joint_1_lower_limit" value="${-4*pi}" />
     <xacro:property name="joint_1_upper_limit" value="${4*pi}" />

@@ -32,8 +32,8 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Attached Body Color: 150; 50; 150
-      Class: moveit_rviz_plugin/RobotState
+    - Alpha: 1
+      Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
       Links:
@@ -64,11 +64,11 @@ Visualization Manager:
           Value: true
         ovis_camera:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
         ovis_end_effector:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
         ovis_link_1:
           Alpha: 1
@@ -138,12 +138,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-      Name: RobotState
-      Robot Alpha: 1
+      Name: RobotModel
       Robot Description: robot_description
-      Robot State Topic: display_robot_state
-      Show All Links: true
-      Show Highlights: true
+      TF Prefix: ""
+      Update Interval: 0
       Value: true
       Visual Enabled: true
   Enabled: true

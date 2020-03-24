@@ -6,6 +6,7 @@
 
     <xacro:include filename="$(find ovis_description)/urdf/ovis.gazebo" />
     <xacro:include filename="$(find ovis_description)/urdf/kinova_common.xacro" />
+    <xacro:include filename="$(find ovis_description)/urdf/kinova.gazebo" />
 
     <xacro:property name="link_base_mesh" value="ovis_base" />
     <xacro:property name="link_base_origin_rpy" value="${pi/2} 0 0"/>

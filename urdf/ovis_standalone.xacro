@@ -33,11 +33,4 @@
   <xacro:property name="robot_root" value="ovis_root" />
   <xacro:ovis base_parent="${robot_root}"/>
 
-  <!-- for gazebo -->
-  <link name="world"/>
-  <joint name="connect_root_and_world" type="fixed">
-    <child link="ovis_root" />
-    <parent link="world" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </joint>
 </robot>

@@ -18,19 +18,16 @@
   <!-- Include ovis robotic arm -->
   <xacro:include filename="$(find ovis_description)/urdf/ovis.xacro"/>
 
-  <!-- Add a robotiq 2f 140 gripper -->
-  <xacro:include filename="$(find robotiq_2f_140_gripper_visualization)/urdf/robotiq_arg2f_140_model_macro.xacro" />
-  <xacro:robotiq_arg2f_140 prefix=""/>
-
-  <!-- attach robotiq gripper to ovis flange -->
-  <joint name="gripper_base" type="fixed">
-    <parent link="ovis_link_tool0"/>
-    <child link="robotiq_arg2f_base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
-
   <link name="ovis_root"/>
   <xacro:property name="robot_root" value="ovis_root" />
   <xacro:ovis base_parent="${robot_root}"/>
+
+  <link name="world"/>
+  <joint name="connect_root_and_world" type="fixed">
+    <child link="ovis_root" />
+    <parent link="world" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
 
 </robot>

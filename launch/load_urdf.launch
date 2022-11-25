@@ -1,0 +1,6 @@
+<launch>
+
+    <!-- Load the urdf description from generated_gazebo file to parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find ovis_description)/urdf/generated_gazebo.urdf"/>
+    
+</launch>
